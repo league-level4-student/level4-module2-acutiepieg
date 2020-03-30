@@ -32,7 +32,13 @@ public class StringMethods {
 
 	// Given Strings s1 and s2, return the longer String
 	public static String longerString(String s1, String s2) {
-		return null;
+		if(s1.length() > s2.length()) {
+			return s1;
+		}
+		else if(s2.length() > s1.length()){
+			return s2;
+		}
+		return "equal";
 	}
 
 	
