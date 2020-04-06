@@ -13,28 +13,28 @@ class StringMethodsTest {
 		assertEquals("equal", StringMethods.longerString("equal", "equal"));
 	}
 	
-//	@Test
-//	void testFormatSpaces() {
-//		assertEquals("This String should not chage", StringMethods.formatSpaces("This String should not chage"));
-//		assertEquals("This_String_should_have_its_spaces_filled_with_underscores", StringMethods.formatSpaces("This String should have its spaces filled with underscores"));
-//		assertEquals("x_x_x_x_x_x_x_underscores_x_x_x_x_x_x", StringMethods.formatSpaces("x x x x x x x underscores x x x x x x"));
-//	}
-//	
-//	@Test 
-//	void testLineLeader() {
-//		assertEquals("John A", StringMethods.lineLeader("John C", "John B", "John A"));
-//		assertEquals("John A", StringMethods.lineLeader(" John C   ", "     John B ", "           John A  "));
-//		assertEquals("Charley F", StringMethods.lineLeader("  Allison Z", " Brad H ", " Charley F "));
-//	}
-//	
-//	@Test
-//	void testNumeralSum() {
-//		assertEquals(0, StringMethods.numeralSum(""));
-//		assertEquals(5, StringMethods.numeralSum("11111"));
-//		assertEquals(3, StringMethods.numeralSum("a1b2c"));
-//		assertEquals(45, StringMethods.numeralSum("x1x2x3x4x5x6x7x8x9x"));
-//	}
-//
+	@Test
+	void testFormatSpaces() {
+		assertEquals("This String should not chage", StringMethods.formatSpaces("This String should not chage"));
+		assertEquals("This_String_should_have_its_spaces_filled_with_underscores", StringMethods.formatSpaces("This String should have its spaces filled with underscores"));
+		assertEquals("x_x_x_x_x_x_x_underscores_x_x_x_x_x_x", StringMethods.formatSpaces("x x x x x x x underscores x x x x x x"));
+	}
+	
+	@Test 
+	void testLineLeader() {
+		assertEquals("John A", StringMethods.lineLeader("John C", "John B", "John A"));
+		assertEquals("John A", StringMethods.lineLeader(" John C   ", "     John B ", "           John A  "));
+		assertEquals("Charley F", StringMethods.lineLeader("  Allison Z", " Brad H ", " Charley F "));
+	}
+	
+	@Test
+	void testNumeralSum() {
+		assertEquals(0, StringMethods.numeralSum(""));
+		assertEquals(5, StringMethods.numeralSum("11111"));
+		assertEquals(3, StringMethods.numeralSum("a1b2c"));
+		assertEquals(45, StringMethods.numeralSum("x1x2x3x4x5x6x7x8x9x"));
+	}
+
 //	@Test
 //	void testSubstringCount() {
 //		assertEquals(3, StringMethods.substringCount("subsubsub", "sub"));
