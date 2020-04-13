@@ -76,54 +76,106 @@ public class StringMethods {
 	public static int numeralSum(String s) {
 		if (!s.equals("")) {
 			String[] split = new String[s.length()];
-			;
-			split = s.split(" ");
-
+			split = s.split("");
 			int total = 0;
 			for (int i = 0; i < split.length; i++) {
-				total = total + Integer.parseInt(split[i]);
+				if (Character.isDigit(split[i].charAt(0))) {
+					int newInt = Integer.parseInt(split[i]);
+					total = total + newInt;
+				}
 			}
-
 			return total;
-		}
-		else {
+		} else {
 			return 0;
 		}
 	}
 
 	// Return the number of times String substring appears in String s
 	public static int substringCount(String s, String substring) {
-		return 0;
+		int count = 0;
+		int check = s.indexOf(substring);
+		if (check != -1) {
+			count++;
+		}
+
+		while (check != -1) {
+			check = s.indexOf(substring, check + substring.length());
+			if (check != -1) {
+				count++;
+			}
+		}
+
+		return count;
 	}
 
 	// Call Utitilities.encrypt to encrypt String s
 	public static String encrypt(String s, char key) {
-		return null;
+		byte[] split = new byte[s.length()];
+		split = s.getBytes();
+		String newS = Utilities.encrypt(split, (byte) key);
+		return newS;
 	}
 
 	// Call Utilities.decrypt to decrypt the cyphertext
 	public static String decrypt(String s, char key) {
+//		String newS = Utilities.decrypt(s, (byte) key);
+//		return newS;
 		return null;
 	}
 
 	// Return the number of words in String s that end with String substring
 	// You can assume there are no punctuation marks between words
 	public static int wordsEndsWithSubstring(String s, String substring) {
-		return 0;
+		int count = 0;
+		String[] split = new String[substringCount(s, " ")];
+		split = s.split(" ");
+		for (int i = 0; i < split.length; i++) {
+			if (split[i].endsWith(substring)) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	// Given String s, return the number of characters between the first occurrence
 	// of String substring and the final occurrence
 	// You can assume that substring will appear at least twice
 	public static int distance(String s, String substring) {
-		return 0;
+		int first = s.indexOf(substring);
+		int last = s.indexOf(substring);
+		int temp;
+		while (last != -1) {
+			temp = s.indexOf(substring, last + substring.length());
+			if (temp != -1) {
+				last = temp;
+			}
+		}
+		return last - first;
 	}
 
 	// Return true if String s is a palindrome
 	// palindromes are words or phrases are read the same forward as backward.
 	// HINT: ignore/remove all punctuation and spaces in the String
 	public static boolean palindrome(String s) {
-		return true;
+		String newS = "";
+		for (int i = s.length() - 1; i >= 0; i--) {
+			if (Character.isLetter(s.charAt(i))) {
+				newS = newS + Character.toLowerCase(s.charAt(i));
+			}
+		}
+		
+		String lower = "";
+		for (int i = 0; i < s.length(); i++) {
+			if (Character.isLetter(s.charAt(i))) {
+				lower = lower + Character.toLowerCase(s.charAt(i));
+			}
+		}
+		
+		if (lower.equals(newS)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }
