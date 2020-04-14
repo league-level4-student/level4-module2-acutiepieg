@@ -118,9 +118,8 @@ public class StringMethods {
 
 	// Call Utilities.decrypt to decrypt the cyphertext
 	public static String decrypt(String s, char key) {
-//		String newS = Utilities.decrypt(s, (byte) key);
-//		return newS;
-		return null;
+		String newS = Utilities.decrypt(s, (byte) key);
+		return newS;
 	}
 
 	// Return the number of words in String s that end with String substring
